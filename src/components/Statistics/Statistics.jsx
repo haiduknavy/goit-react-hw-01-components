@@ -1,28 +1,17 @@
+import PropTypes from 'prop-types';
+import {Item} from './Statistics.styled';
+import doColor from './doColor';
 
-export const Statistics = ({data})=>{
+export const Statistics = ({label,percentage})=>{
     return (
-        <section className="statistics">
-  <h2 className="title">Upload stats</h2>
-
-  <ul className="stat-list">
-    <li className="item">
-      <span className="label">.docx</span>
-      <span className="percentage">4%</span>
-    </li>
-    <li className="item">
-      <span className="label">.mp3</span>
-      <span className="percentage">14%</span>
-    </li>
-    <li className="item">
-      <span className="label">.pdf</span>
-      <span className="percentage">41%</span>
-    </li>
-    <li className="item">
-      <span className="label">.mp4</span>
-      <span className="percentage">12%</span>
-    </li>
-  </ul>
-</section>
+        <Item style={{backgroundColor: doColor()}}>
+      <span>{label}</span>
+      <span> {percentage} %</span>
+    </Item>
     )
 }
 
+Statistics.propTypes = {
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+};
