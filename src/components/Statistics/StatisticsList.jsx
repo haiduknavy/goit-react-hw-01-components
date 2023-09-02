@@ -5,7 +5,7 @@ import {Section, Title, List} from './Statistics.styled';
 export const StatisticsList = ({title, stats})=>{
 return (
     <Section>
-    <Title>Upload stats</Title>
+    {title && <Title>{title}</Title>}
   
     <List >
     {stats.map(({label,percentage,id}) =>
